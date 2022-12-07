@@ -3,9 +3,9 @@
 // swiftui-appTests
 //
 // Created by Huy D. on 11/27/22
-// duonghominhhuy.github.io 😜
+// mjn2max.github.io 😜
 // 
-// Copyright © 2022 CodePassion.dev. All rights reserved.
+// Copyright © 2022 mjn2max.com. All rights reserved.
 //
 
 import XCTest
