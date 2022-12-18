@@ -1,16 +1,18 @@
 //
-// swiftui_appTests.swift
-// swiftui-appTests
+// swiftui_fundamentalsTests.swift
+// swiftui-fundamentalsTests
 //
-// Created by Huy D. on 11/27/22
+// Created by Huy D. on 12/18/22
 // mjn2max.github.io 😜
 // 
-// Copyright © 2022 mjn2max.com. All rights reserved.
+// Copyright © 2022. All rights reserved.
+// mjn2max.com
 //
 
 import XCTest
+@testable import swiftui_fundamentals
 
-final class swiftui_appTests: XCTestCase {
+final class swiftui_fundamentalsTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -30,7 +32,7 @@ final class swiftui_appTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        measure {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }

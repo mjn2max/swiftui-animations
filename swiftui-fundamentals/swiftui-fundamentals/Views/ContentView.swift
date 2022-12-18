@@ -1,11 +1,12 @@
 //
 // ContentView.swift
-// swiftui-app
+// swiftui-fundamentals
 //
-// Created by Huy D. on 11/27/22
+// Created by Huy D. on 12/18/22
 // mjn2max.github.io 😜
 // 
-// Copyright © 2022 mjn2max.com. All rights reserved.
+// Copyright © 2022. All rights reserved.
+// mjn2max.com
 //
 
 import SwiftUI

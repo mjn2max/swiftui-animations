@@ -1,16 +1,17 @@
 //
-// swiftui_appUITests.swift
-// swiftui-appUITests
+// swiftui_fundamentalsUITests.swift
+// swiftui-fundamentalsUITests
 //
-// Created by Huy D. on 11/27/22
+// Created by Huy D. on 12/18/22
 // mjn2max.github.io 😜
 // 
-// Copyright © 2022 mjn2max.com. All rights reserved.
+// Copyright © 2022. All rights reserved.
+// mjn2max.com
 //
 
 import XCTest
 
-final class swiftui_appUITests: XCTestCase {
+final class swiftui_fundamentalsUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
