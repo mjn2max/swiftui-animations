@@ -6,6 +6,15 @@
 - Fully supported by Apple and is constantly being updated and improved.
 
 ## Components
+- Text
+- Button
+- Image
+- List
+- View
+- Form
+- DatePicker
+- Slider
+- Toggle
 
 ## View Modifiers
 
