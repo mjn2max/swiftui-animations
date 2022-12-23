@@ -17,6 +17,18 @@
 - Toggle
 
 ## View Modifiers
+- Modify the style or apply additional functionality to your views.
+- Order from top to bottom: create a new, modified version of the original view.
+### Text
+- Kerning (the spacing between characters)
+- Bold
+- Line Spacing
+- Multiline Text Alignment
+### More
+- Padding
+- Foreground Color
+- Background
+- Corner Radius
 
 ## Layout
 
