@@ -31,6 +31,10 @@
 - Corner Radius
 
 ## Layout
+- VStack: Vertical Stack
+- HStack: Horizontal Stack
+- ZStack: Depth-based stack
+- Lazy Stack: Stack view doesn’t create items until it needs to render them onscreen
 
 ## State
 
