@@ -45,5 +45,7 @@
 - EnvironmentObject
 
 ## Navigating
+- NavigationView
+- NavigationLink
 
 ## Animation
