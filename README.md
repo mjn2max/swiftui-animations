@@ -49,3 +49,4 @@
 - NavigationLink
 
 ## Animation
+- .animation()
