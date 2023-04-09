@@ -71,6 +71,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6407DFA329E269520090D271 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6407DFA429E269590090D271 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6407DFA529E269690090D271 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		64C6FB46294F773D008DBB17 = {
 			isa = PBXGroup;
 			children = (
@@ -95,8 +116,10 @@
 			isa = PBXGroup;
 			children = (
 				64C6FB7C294F77A2008DBB17 /* App */,
-				64C6FB7E294F77BD008DBB17 /* Models */,
+				6407DFA329E269520090D271 /* Models */,
 				64C6FB7D294F77A9008DBB17 /* Views */,
+				6407DFA429E269590090D271 /* ViewModels */,
+				6407DFA529E269690090D271 /* Helpers */,
 				64C6FB58294F773E008DBB17 /* Preview Content */,
 			);
 			path = "swiftui-fundamentals";
@@ -131,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				64C6FB52294F773D008DBB17 /* swiftui_fundamentalsApp.swift */,
+				64C6FB54294F773D008DBB17 /* ContentView.swift */,
 				64C6FB56294F773E008DBB17 /* Assets.xcassets */,
 			);
 			path = App;
@@ -139,16 +163,8 @@
 		64C6FB7D294F77A9008DBB17 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				64C6FB54294F773D008DBB17 /* ContentView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		64C6FB7E294F77BD008DBB17 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
