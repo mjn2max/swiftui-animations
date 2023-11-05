@@ -13,10 +13,23 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Text("SwiftUI Fundamentals")
+        NavigationView {
+            List {
+                Section("Components") {
+                    Text("Text")
+                    Text("Button")
+                    Text("Image")
+                    Text("List")
+                    Text("View")
+                    Text("Form")
+                    Text("DatePicker")
+                    Text("Slider")
+                    Text("Toggle")
+                }
+            }
+            .navigationTitle("SwiftUI Fundamentals")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .padding()
     }
 }
 

@@ -14,6 +14,7 @@
 		64C6FB64294F773E008DBB17 /* swiftui_fundamentalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C6FB63294F773E008DBB17 /* swiftui_fundamentalsTests.swift */; };
 		64C6FB6E294F773E008DBB17 /* swiftui_fundamentalsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C6FB6D294F773E008DBB17 /* swiftui_fundamentalsUITests.swift */; };
 		64C6FB70294F773E008DBB17 /* swiftui_fundamentalsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C6FB6F294F773E008DBB17 /* swiftui_fundamentalsUITestsLaunchTests.swift */; };
+		64E2B7E22AF73F9C005F52E0 /* TextComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E2B7E12AF73F9C005F52E0 /* TextComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		64C6FB69294F773E008DBB17 /* swiftui-fundamentalsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swiftui-fundamentalsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64C6FB6D294F773E008DBB17 /* swiftui_fundamentalsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_fundamentalsUITests.swift; sourceTree = "<group>"; };
 		64C6FB6F294F773E008DBB17 /* swiftui_fundamentalsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftui_fundamentalsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		64E2B7E12AF73F9C005F52E0 /* TextComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		64C6FB51294F773D008DBB17 /* swiftui-fundamentals */ = {
 			isa = PBXGroup;
 			children = (
+				64E2B7DE2AF73F63005F52E0 /* Components */,
 				64C6FB7C294F77A2008DBB17 /* App */,
 				6407DFA329E269520090D271 /* Models */,
 				64C6FB7D294F77A9008DBB17 /* Views */,
@@ -165,6 +168,14 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		64E2B7DE2AF73F63005F52E0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				64E2B7E12AF73F9C005F52E0 /* TextComponent.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64E2B7E22AF73F9C005F52E0 /* TextComponent.swift in Sources */,
 				64C6FB55294F773D008DBB17 /* ContentView.swift in Sources */,
 				64C6FB53294F773D008DBB17 /* swiftui_fundamentalsApp.swift in Sources */,
 			);
