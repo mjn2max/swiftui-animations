@@ -11,7 +11,6 @@
 
 import SwiftUI
 
-@available(macOS 10.15, *)
 extension View {
     public func hLeading() -> some View {
         self.frame(maxWidth: .infinity, alignment: .leading)
