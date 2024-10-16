@@ -1,52 +1,74 @@
-# SwiftUI Fundamentals
+# SwiftUI-Animations
 
-## Introduction
-- Launched in WWDC 2019 (UIKit 2008).
-- Runs on iOS 13, macOS 10.15, tvOS 13, and watchOS 6, or any future later versions of those platforms.
-- Fully supported by Apple and is constantly being updated and improved.
+[![Swift](https://img.shields.io/badge/Swift-5.7_5.8_5.9-orange?style=flat-square)](https://img.shields.io/badge/Swift-5.7_5.8_5.9-Orange?style=flat-square)
+[![Platforms](https://img.shields.io/badge/Platforms-iOS_macOS_watchOS_tvOS_visionOS-yellowgreen?style=flat-square)](https://img.shields.io/badge/Platforms-iOS_macOS_watchOS_tvOS_visionOS-Green?style=flat-square)
+[![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)
 
-## Components
-- Text
-- Button
-- Image
-- List
-- View
-- Form
-- DatePicker
-- Slider
-- Toggle
+SwiftUI-Extension is a library written in Swift
 
-## View Modifiers
-- Modify the style or apply additional functionality to your views.
-- Order from top to bottom: create a new, modified version of the original view.
-### Text
-- Kerning (the spacing between characters)
-- Bold
-- Line Spacing
-- Multiline Text Alignment
-### More
-- Padding
-- Foreground Color
-- Background
-- Corner Radius
+- [Features](#features)
+- [Component Libraries](#component-libraries)
+- [Requirements](#requirements)
+- [Migration Guides](#migration-guides)
+- [Communication](#communication)
+- [Installation](#installation)
+- [Contributing](#contributing)
+- [Usage]()
+- [Open Radars](#open-radars)
+- [FAQ](#faq)
+- [Credits](#credits)
+- [Donations](#donations)
+- [License](#license)
 
-## Layout
-- VStack: Vertical Stack.
-- HStack: Horizontal Stack.
-- ZStack: Depth-based stack.
-- Lazy Stack: Stack view doesn’t create items until it needs to render them onscreen.
+## Features
 
-## State
-- When a @State variable changed,  SwiftUI will automatically recompute the body of the view.
-- Binding: one source of true. $: convert a state variable to a binding variable. Effectively, they are “bound” together.
-- @State: value Types
-- @StateObject: Reference Types
-- ObservableObject: @ObservedObject, @Published
-- EnvironmentObject
+- [x] Views Extensions
+- [x]
 
-## Navigating
-- NavigationView
-- NavigationLink
+## Component Libraries
 
-## Animation
-- .animation()
+## Requirements
+
+| Platform    | Minimum Swift Version | Installation                                                         | Status           |
+| ----------- | --------------------- | -------------------------------------------------------------------- | ---------------- |
+| iOS 13.0+   | 5.7.1 / Xcode 14.1    | [Swift Package Manager](#swift-package-manager), [Manual](#manually) | Not Fully Tested |
+| macOS 13.0+ | Latest Only           | [Swift Package Manager](#swift-package-manager)                      | Not Fully Tested |
+| watchOS     | Latest Only           | [Swift Package Manager](#swift-package-manager)                      | Not Fully Tested |
+| tvOS        | Latest Only           | [Swift Package Manager](#swift-package-manager)                      | Not Fully Tested |
+| visionOS    | Latest Only           | [Swift Package Manager](#swift-package-manager)                      | Not Fully Tested |
+
+## Migration Guides
+
+## Communication
+
+## Installation
+
+### Swift Package Manager
+
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler.
+
+Once you have your Swift package set up, adding SwiftUI-Extensions as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/mjn2max/SwiftUI-Animations.git")
+]
+```
+
+### Manually
+
+If you prefer not to use any of the aforementioned dependency managers, you can integrate SwiftUI-Animations into your project manually.
+
+#### Embedded Framework
+
+## Contributing
+
+## Open Radars
+
+## FAQ
+
+## Credits
+
+## Donations
+
+## License
