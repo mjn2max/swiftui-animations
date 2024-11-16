@@ -1,45 +1,18 @@
-# SwiftUI-Animations
+# SwiftUI-Animations 🎬✨
 
 [![Swift](https://img.shields.io/badge/Swift-5.7_5.8_5.9-orange?style=flat-square)](https://img.shields.io/badge/Swift-5.7_5.8_5.9-Orange?style=flat-square)
 [![Platforms](https://img.shields.io/badge/Platforms-iOS_macOS_watchOS_tvOS_visionOS-yellowgreen?style=flat-square)](https://img.shields.io/badge/Platforms-iOS_macOS_watchOS_tvOS_visionOS-Green?style=flat-square)
 [![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)
 
-SwiftUI-Extension is a library written in Swift
+An open-source library of delightful and customizable animations built with SwiftUI. Perfect for adding life to your apps and creating engaging user experiences with minimal effort.
 
-- [Features](#features)
-- [Component Libraries](#component-libraries)
-- [Requirements](#requirements)
-- [Migration Guides](#migration-guides)
-- [Communication](#communication)
-- [Installation](#installation)
-- [Contributing](#contributing)
-- [Usage]()
-- [Open Radars](#open-radars)
-- [FAQ](#faq)
-- [Credits](#credits)
-- [Donations](#donations)
-- [License](#license)
+## Features 🚀
 
-## Features
-
-- [x] Views Extensions
-- [x]
-
-## Component Libraries
-
-## Requirements
-
-| Platform    | Minimum Swift Version | Installation                                                         | Status           |
-| ----------- | --------------------- | -------------------------------------------------------------------- | ---------------- |
-| iOS 13.0+   | 5.7.1 / Xcode 14.1    | [Swift Package Manager](#swift-package-manager), [Manual](#manually) | Not Fully Tested |
-| macOS 13.0+ | Latest Only           | [Swift Package Manager](#swift-package-manager)                      | Not Fully Tested |
-| watchOS     | Latest Only           | [Swift Package Manager](#swift-package-manager)                      | Not Fully Tested |
-| tvOS        | Latest Only           | [Swift Package Manager](#swift-package-manager)                      | Not Fully Tested |
-| visionOS    | Latest Only           | [Swift Package Manager](#swift-package-manager)                      | Not Fully Tested |
-
-## Migration Guides
-
-## Communication
+- Prebuilt Animations: A collection of ready-to-use animations like transitions, loaders, and effects.
+- Customizable: Easily tweak animation parameters to match your app’s design.
+- Reusable Components: Modular and reusable animation views and modifiers.
+- Cross-Platform Support: Works seamlessly across iOS, macOS, watchOS, and tvOS.
+- 100% SwiftUI: Leverages the power of SwiftUI for smooth and declarative animations.
 
 ## Installation
 
@@ -51,7 +24,7 @@ Once you have your Swift package set up, adding SwiftUI-Extensions as a dependen
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/mjn2max/SwiftUI-Animations.git")
+    .package(url: "https://github.com/mjn2max/swiftui-animations.git")
 ]
 ```
 
