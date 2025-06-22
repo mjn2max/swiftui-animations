@@ -109,12 +109,12 @@ A: Core extensions are stable, but some platforms are not fully tested. Use at y
 
 ## Credits
 
-Coming soon...
+Created and maintained by [mjn2max](https://github.com/mjn2max) and contributors. See the [Contributors](https://github.com/mjn2max/swiftui-animations/graphs/contributors) page for a full list.
 
 ## Donations
 
-Coming soon...
+If you find this useful, you can sponsor this project via [GitHub Sponsors](https://github.com/sponsors/mjn2max) or [Buy Me a Coffee](https://buymeacoffee.com/mjn2max). Your support helps maintain and improve SwiftUI-Animations!
 
 ## License
 
-Coming soon...
+This project is licensed under the MIT License. See [LICENSE](/LICENSE) for details.
