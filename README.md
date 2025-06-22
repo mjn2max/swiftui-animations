@@ -68,7 +68,60 @@ import SwiftUI-Animations
 
 ## Usage
 
-Coming soon...
+SwiftUI-Animations is designed for drop-in use with minimal configuration. Simply import the module and use the prebuilt animation components directly in your views:
+
+**Example 1: Animated Loader**
+
+```swift
+import SwiftUI-Animations
+
+struct ContentView: View {
+    var body: some View {
+        BouncingDotsLoader()
+            .frame(width: 100, height: 20)
+    }
+}
+```
+
+**Example 2: Customizable Transition**
+
+```swift
+import SwiftUI-Animations
+
+struct ContentView: View {
+    @State private var showDetail = false
+
+    var body: some View {
+        VStack {
+            if showDetail {
+                DetailView()
+                    .transition(.fadeAndSlide)
+            }
+
+            Button("Toggle") {
+                withAnimation {
+                    showDetail.toggle()
+                }
+            }
+        }
+    }
+}
+```
+
+**Example 3: Reusable Animation Modifier**
+
+```swift
+import SwiftUI-Animations
+
+struct ContentView: View {
+    var body: some View {
+        Text("Animated Text")
+            .animatedScaleEffect()
+    }
+}
+```
+
+More examples can be found in the [Animation List](#animation-list).
 
 ## Animation List
 
