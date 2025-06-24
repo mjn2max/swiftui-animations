@@ -125,7 +125,27 @@ More examples can be found in the [Animation List](#animation-list).
 
 ## Animation List
 
-Coming soon...
+Here are some of the most popular animation components and modifiers included in this package:
+
+`Loaders.swift`
+
+- _BouncingDotsLoader:_ A trio of animated dots that bounce sequentially.
+- _RotatingRingLoader:_ A circular loader with continuous rotation.
+- _TypingIndicator:_ A classic "typing..." chat animation.
+
+`Transitions.swift`
+
+- _.fadeAndSlide:_ Combines opacity and offset for a smooth fade-slide transition.
+- _.scaleAndBlur:_ Adds a blur and scale effect on insertion/removal.
+- _.spinIn:_ Rotates the view into position during appearance.
+
+`Modifiers.swift`
+
+- _animatedScaleEffect():_ Pulses the view with scaling animation.
+- _shimmering():_ Applies a shimmering light effect over the view.
+- _wiggling():_ Adds a playful wiggle motion for attention-grabbing.
+
+For the full list of animations and modifiers, browse the [Sources directory](/Sources/).
 
 ## Migration Guides
 
