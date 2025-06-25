@@ -147,6 +147,8 @@ Here are some of the most popular animation components and modifiers included in
 
 For the full list of animations and modifiers, browse the [Sources directory](/Sources/).
 
+The repository’s source folder structure is organized by animation category, mirroring the structure found in [Apple’s SwiftUI Animation documentation](https://developer.apple.com/documentation/swiftui/animations).
+
 ## Migration Guides
 
 Coming soon...
