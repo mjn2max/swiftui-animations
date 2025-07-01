@@ -9,4 +9,18 @@
 // CodePassion.dev
 //
 
-import Foundation
+import SwiftUI
+
+extension AnyTransition {
+    /// A slide-and-fade transition that moves the view in from the bottom while fading it in.
+    ///
+    /// - Returns: A transition that combines slide from bottom and opacity.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.slideAndFade)
+    /// ```
+    static var slideAndFade: AnyTransition {
+        .move(edge: .bottom).combined(with: .opacity)
+    }
+}
