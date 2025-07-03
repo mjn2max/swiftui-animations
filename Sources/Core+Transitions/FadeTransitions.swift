@@ -12,6 +12,19 @@
 import SwiftUI
 
 extension AnyTransition {
+    /// A fade-in and fade-out transition.
+    ///
+    /// - Returns: A transition that smoothly changes opacity.
+    ///
+    /// # Usage
+    /// ```
+    /// .transition(.fade)
+    /// ```
+    static var fade: AnyTransition {
+        .opacity
+    }
+
+
     /// A smooth fade-and-scale transition combining opacity and scale effects.
     ///
     /// - Returns: A transition that fades and slightly scales the view for a polished animation.
