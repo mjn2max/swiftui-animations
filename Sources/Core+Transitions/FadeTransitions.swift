@@ -36,4 +36,17 @@ extension AnyTransition {
     static var fadeAndScale: AnyTransition {
         .opacity.combined(with: .scale(scale: 0.95, anchor: .center))
     }
+
+
+    /// A fade-and-move transition that fades in/out while moving from the bottom.
+    ///
+    /// - Returns: A transition combining opacity and offset from bottom.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.fadeMoveUp)
+    /// ```
+    static var fadeMoveUp: AnyTransition {
+        .opacity.combined(with: .move(edge: .bottom))
+    }
 }
