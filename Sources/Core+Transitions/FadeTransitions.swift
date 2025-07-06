@@ -51,6 +51,19 @@ extension AnyTransition {
     }
 
 
+    /// A fade-and-slide transition that moves the view in/out from the trailing edge while fading.
+    ///
+    /// - Returns: A transition that combines fading with horizontal movement from the trailing edge.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.fadeSlideTrailing)
+    /// ```
+    static var fadeSlideTrailing: AnyTransition {
+        .opacity.combined(with: .move(edge: .trailing))
+    }
+
+
     /// A fade-and-move transition that fades in/out while moving from the bottom.
     ///
     /// - Returns: A transition combining opacity and offset from bottom.
