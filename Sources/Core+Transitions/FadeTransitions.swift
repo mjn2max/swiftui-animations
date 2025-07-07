@@ -75,4 +75,18 @@ extension AnyTransition {
     static var fadeMoveUp: AnyTransition {
         .opacity.combined(with: .move(edge: .bottom))
     }
+
+
+    /// A fade-and-move transition that fades in/out while moving from the top.
+    ///
+    /// - Returns: A transition combining opacity and offset from the top.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.fadeMoveDown)
+    /// ```
+    static var fadeMoveDown: AnyTransition {
+        .opacity.combined(with: .move(edge: .top))
+    }
+
 }
