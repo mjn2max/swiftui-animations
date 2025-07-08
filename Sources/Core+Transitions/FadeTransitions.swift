@@ -89,4 +89,27 @@ extension AnyTransition {
         .opacity.combined(with: .move(edge: .top))
     }
 
+
+    /// A fade-and-offset transition that moves the view slightly up while fading.
+    ///
+    /// - Returns: A transition combining opacity with a subtle upward offset.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.fadeOffsetUp)
+    /// ```
+    static var fadeOffsetUp: AnyTransition {
+        AnyTransition.opacity.combined(with: .modifier(
+            active: OffsetEffect(offset: CGSize(width: 0, height: 20)),
+            identity: OffsetEffect(offset: .zero)
+        ))
+    }
+
+    private struct OffsetEffect: ViewModifier {
+        let offset: CGSize
+
+        func body(content: Content) -> some View {
+            content.offset(offset)
+        }
+    }
 }
