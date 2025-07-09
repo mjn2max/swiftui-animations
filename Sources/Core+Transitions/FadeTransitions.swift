@@ -112,4 +112,28 @@ extension AnyTransition {
             content.offset(offset)
         }
     }
+
+
+    /// A fade-and-rotation transition that combines opacity with a slight rotation effect.
+    ///
+    /// - Returns: A transition combining fade and a subtle rotation.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.fadeRotate)
+    /// ```
+    static var fadeRotate: AnyTransition {
+        AnyTransition.opacity.combined(with: .modifier(
+            active: RotationEffect(angle: .degrees(-15)),
+            identity: RotationEffect(angle: .zero)
+        ))
+    }
+
+    private struct RotationEffect: ViewModifier {
+        let angle: Angle
+
+        func body(content: Content) -> some View {
+            content.rotationEffect(angle)
+        }
+    }
 }
