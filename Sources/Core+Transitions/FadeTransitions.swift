@@ -38,6 +38,19 @@ extension AnyTransition {
     }
 
 
+    /// A fade-and-scale transition that fades in/out while scaling from the top anchor.
+    ///
+    /// - Returns: A transition combining opacity with vertical scale from top.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.fadeScaleTop)
+    /// ```
+    static var fadeScaleTop: AnyTransition {
+        .opacity.combined(with: .scale(scale: 0.9, anchor: .top))
+    }
+
+
     /// A fade-and-slide transition that moves the view in/out from the leading edge while fading.
     ///
     /// - Returns: A transition that combines fading with horizontal movement from the leading edge.
