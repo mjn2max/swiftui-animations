@@ -51,6 +51,19 @@ extension AnyTransition {
     }
 
 
+    /// A fade-and-scale transition that fades in/out while scaling from the bottom anchor.
+    ///
+    /// - Returns: A transition combining opacity with vertical scale from bottom.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.fadeScaleBottom)
+    /// ```
+    static var fadeScaleBottom: AnyTransition {
+        .opacity.combined(with: .scale(scale: 0.9, anchor: .bottom))
+    }
+
+
     /// A fade-and-slide transition that moves the view in/out from the leading edge while fading.
     ///
     /// - Returns: A transition that combines fading with horizontal movement from the leading edge.
@@ -101,8 +114,10 @@ extension AnyTransition {
     static var fadeMoveDown: AnyTransition {
         .opacity.combined(with: .move(edge: .top))
     }
+}
 
 
+extension AnyTransition {
     /// A fade-and-offset transition that moves the view slightly up while fading.
     ///
     /// - Returns: A transition combining opacity with a subtle upward offset.
