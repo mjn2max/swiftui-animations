@@ -49,6 +49,21 @@ extension AnyTransition {
     static var fadeScaleLeading: AnyTransition {
         .opacity.combined(with: .scale(scale: 0.9, anchor: .leading))
     }
+
+
+    /// A fade-and-scale transition that fades in/out while scaling from the trailing anchor.
+    ///
+    /// - Returns: A transition combining opacity with scale from the trailing edge.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.fadeScaleTrailing)
+    /// ```
+    static var fadeScaleTrailing: AnyTransition {
+        .opacity.combined(with: .scale(scale: 0.9, anchor: .trailing))
+    }
+
+
     /// A fade-and-scale transition that fades in/out while scaling from the top anchor.
     ///
     /// - Returns: A transition combining opacity with vertical scale from top.
