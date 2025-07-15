@@ -38,6 +38,19 @@ extension AnyTransition {
     }
 
 
+    /// A fade-and-scale transition that fades in/out while scaling from the center anchor.
+    ///
+    /// - Returns: A transition combining opacity with center scaling.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.fadeScaleCenter)
+    /// ```
+    static var fadeScaleCenter: AnyTransition {
+        .opacity.combined(with: .scale(scale: 0.8, anchor: .center))
+    }
+
+
     /// A fade-and-scale transition that fades in/out while scaling from the leading anchor.
     ///
     /// - Returns: A transition combining opacity with scale from the leading edge.
