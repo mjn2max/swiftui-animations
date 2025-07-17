@@ -11,6 +11,8 @@
 
 import SwiftUI
 
+// MARK: - Corner-Based Custom Transitions
+
 extension AnyTransition {
     /// A fade-in and fade-out transition.
     ///
@@ -155,6 +157,7 @@ extension AnyTransition {
     }
 }
 
+// MARK: - Offset and Rotation Transitions
 
 extension AnyTransition {
     /// A fade-and-offset transition that moves the view slightly up while fading.
@@ -202,5 +205,24 @@ extension AnyTransition {
         func body(content: Content) -> some View {
             content.rotationEffect(angle)
         }
+    }
+}
+
+// MARK: - Corner and Diagonal Offset Transitions
+
+extension AnyTransition {
+    /// A fade-and-offset transition that slides from bottom trailing corner while fading.
+    ///
+    /// - Returns: A transition combining opacity with offset from bottom trailing corner.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.fadeCornerBottomTrailing)
+    /// ```
+    static var fadeCornerBottomTrailing: AnyTransition {
+        AnyTransition.opacity.combined(with: .modifier(
+            active: CornerOffsetEffect(offset: CGSize(width: 50, height: 50)),
+            identity: CornerOffsetEffect(offset: .zero)
+        ))
     }
 }
