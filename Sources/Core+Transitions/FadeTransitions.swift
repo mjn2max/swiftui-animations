@@ -225,4 +225,20 @@ extension AnyTransition {
             identity: CornerOffsetEffect(offset: .zero)
         ))
     }
+
+
+    /// A fade-and-slide transition that offsets the view from the top trailing corner while fading.
+    ///
+    /// - Returns: A transition combining fade with offset from top trailing corner.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.fadeCornerTopTrailing)
+    /// ```
+    static var fadeCornerTopTrailing: AnyTransition {
+        AnyTransition.opacity.combined(with: .modifier(
+            active: CornerOffsetEffect(offset: CGSize(width: 50, height: -50)),
+            identity: CornerOffsetEffect(offset: .zero)
+        ))
+    }
 }
