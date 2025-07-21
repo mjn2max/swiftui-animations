@@ -257,4 +257,28 @@ extension AnyTransition {
             identity: CornerOffsetEffect(offset: .zero)
         ))
     }
+
+
+    /// A fade-and-offset transition that moves the view diagonally inward from all sides.
+    ///
+    /// - Returns: A transition combining opacity with diagonal inward movement.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.fadeInwardDiagonal)
+    /// ```
+    static var fadeInwardDiagonal: AnyTransition {
+        AnyTransition.opacity.combined(with: .modifier(
+            active: CornerOffsetEffect(offset: CGSize(width: 40, height: 40)),
+            identity: CornerOffsetEffect(offset: .zero)
+        ))
+    }
+
+
+    private struct CornerOffsetEffect: ViewModifier {
+        let offset: CGSize
+        func body(content: Content) -> some View {
+            content.offset(offset)
+        }
+    }
 }
