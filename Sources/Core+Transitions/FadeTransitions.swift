@@ -275,6 +275,22 @@ extension AnyTransition {
     }
 
 
+    /// A fade-and-offset transition that moves the view diagonally outward to all sides.
+    ///
+    /// - Returns: A transition combining opacity with diagonal outward movement.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.fadeOutwardDiagonal)
+    /// ```
+    static var fadeOutwardDiagonal: AnyTransition {
+        AnyTransition.opacity.combined(with: .modifier(
+            active: CornerOffsetEffect(offset: CGSize(width: -40, height: -40)),
+            identity: CornerOffsetEffect(offset: .zero)
+        ))
+    }
+
+
     private struct CornerOffsetEffect: ViewModifier {
         let offset: CGSize
         func body(content: Content) -> some View {
