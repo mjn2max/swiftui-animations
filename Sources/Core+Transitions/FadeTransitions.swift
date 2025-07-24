@@ -291,6 +291,10 @@ extension AnyTransition {
     }
 
 
+    /// A custom view modifier that applies a specified offset to the view content.
+    /// Used for creating corner and diagonal offset transitions in combination with opacity.
+    ///
+    /// - Parameter offset: The offset to apply during the active transition state.
     private struct CornerOffsetEffect: ViewModifier {
         let offset: CGSize
         func body(content: Content) -> some View {
