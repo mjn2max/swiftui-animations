@@ -211,17 +211,17 @@ extension AnyTransition {
 // MARK: - Corner and Diagonal Offset Transitions
 
 extension AnyTransition {
-    /// A fade-and-offset transition that slides from bottom trailing corner while fading.
+    /// A fade-and-offset transition that moves the view from the top leading corner while fading.
     ///
-    /// - Returns: A transition combining opacity with offset from bottom trailing corner.
+    /// - Returns: A transition combining opacity with offset from top leading corner.
     ///
     /// # Usage
     /// ```swift
-    /// .transition(.fadeCornerBottomTrailing)
+    /// .transition(.fadeCornerTopLeading)
     /// ```
-    static var fadeCornerBottomTrailing: AnyTransition {
+    static var fadeCornerTopLeading: AnyTransition {
         AnyTransition.opacity.combined(with: .modifier(
-            active: CornerOffsetEffect(offset: CGSize(width: 50, height: 50)),
+            active: CornerOffsetEffect(offset: CGSize(width: -50, height: -50)),
             identity: CornerOffsetEffect(offset: .zero)
         ))
     }
@@ -254,6 +254,22 @@ extension AnyTransition {
     static var fadeCornerBottomLeading: AnyTransition {
         AnyTransition.opacity.combined(with: .modifier(
             active: CornerOffsetEffect(offset: CGSize(width: -50, height: 50)),
+            identity: CornerOffsetEffect(offset: .zero)
+        ))
+    }
+
+
+    /// A fade-and-offset transition that slides from bottom trailing corner while fading.
+    ///
+    /// - Returns: A transition combining opacity with offset from bottom trailing corner.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.fadeCornerBottomTrailing)
+    /// ```
+    static var fadeCornerBottomTrailing: AnyTransition {
+        AnyTransition.opacity.combined(with: .modifier(
+            active: CornerOffsetEffect(offset: CGSize(width: 50, height: 50)),
             identity: CornerOffsetEffect(offset: .zero)
         ))
     }
