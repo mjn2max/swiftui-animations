@@ -22,12 +22,12 @@ extension AnyTransition {
     /// ```
     static var flipFromLeading: AnyTransition {
         .modifier(
-            active: FlipModifier(angle: -90, anchor: .leading),
-            identity: FlipModifier(angle: 0, anchor: .leading)
+            active: FlipModifier(angle: -90, axis: (x: 0, y: 1, z: 0), anchor: .leading),
+            identity: FlipModifier(angle: 0, axis: (x: 0, y: 1, z: 0), anchor: .leading)
         )
     }
 
-    
+
     /// A flip transition that simulates a 3D flip effect from the trailing edge.
     ///
     /// - Returns: A transition that applies a rotation combined with opacity for a trailing-edge flip animation.
@@ -38,21 +38,37 @@ extension AnyTransition {
     /// ```
     static var flipFromTrailing: AnyTransition {
         .modifier(
-            active: FlipModifier(angle: 90, anchor: .trailing),
-            identity: FlipModifier(angle: 0, anchor: .trailing)
+            active: FlipModifier(angle: 90, axis: (x: 0, y: 1, z: 0), anchor: .trailing),
+            identity: FlipModifier(angle: 0, axis: (x: 0, y: 1, z: 0), anchor: .trailing)
+        )
+    }
+
+    /// A flip transition that simulates a 3D flip effect from the top edge.
+    ///
+    /// - Returns: A transition that applies a vertical rotation combined with opacity for a flipping animation.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.flipFromTop)
+    /// ```
+    static var flipFromTop: AnyTransition {
+        .modifier(
+            active: FlipModifier(angle: -90, axis: (x: 1, y: 0, z: 0), anchor: .top),
+            identity: FlipModifier(angle: 0, axis: (x: 1, y: 0, z: 0), anchor: .top)
         )
     }
 }
 
 private struct FlipModifier: ViewModifier {
     let angle: Double
+    let axis: (x: CGFloat, y: CGFloat, z: CGFloat)
     let anchor: UnitPoint
 
     func body(content: Content) -> some View {
         content
             .rotation3DEffect(
                 .degrees(angle),
-                axis: (x: 0, y: 1, z: 0),
+                axis: axis,
                 anchor: anchor,
                 perspective: 0.5
             )
