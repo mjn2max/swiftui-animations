@@ -43,6 +43,7 @@ extension AnyTransition {
         )
     }
 
+
     /// A flip transition that simulates a 3D flip effect from the top edge.
     ///
     /// - Returns: A transition that applies a vertical rotation combined with opacity for a flipping animation.
@@ -55,6 +56,22 @@ extension AnyTransition {
         .modifier(
             active: FlipModifier(angle: -90, axis: (x: 1, y: 0, z: 0), anchor: .top),
             identity: FlipModifier(angle: 0, axis: (x: 1, y: 0, z: 0), anchor: .top)
+        )
+    }
+
+
+    /// A flip transition that simulates a 3D flip effect from the bottom edge.
+    ///
+    /// - Returns: A transition that applies a vertical rotation combined with opacity for a flipping animation.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.flipFromBottom)
+    /// ```
+    static var flipFromBottom: AnyTransition {
+        .modifier(
+            active: FlipModifier(angle: 90, axis: (x: 1, y: 0, z: 0), anchor: .bottom),
+            identity: FlipModifier(angle: 0, axis: (x: 1, y: 0, z: 0), anchor: .bottom)
         )
     }
 }
