@@ -74,6 +74,22 @@ extension AnyTransition {
             identity: FlipModifier(angle: 0, axis: (x: 1, y: 0, z: 0), anchor: .bottom)
         )
     }
+
+    
+    /// A flip transition that simulates a 3D flip effect from the center.
+    ///
+    /// - Returns: A transition that applies a rotation around the Y-axis from the center anchor.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.flipFromCenter)
+    /// ```
+    static var flipFromCenter: AnyTransition {
+        .modifier(
+            active: FlipModifier(angle: 180, axis: (x: 0, y: 1, z: 0), anchor: .center),
+            identity: FlipModifier(angle: 0, axis: (x: 0, y: 1, z: 0), anchor: .center)
+        )
+    }
 }
 
 private struct FlipModifier: ViewModifier {
