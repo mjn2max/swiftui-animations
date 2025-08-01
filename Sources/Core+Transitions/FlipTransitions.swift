@@ -75,7 +75,7 @@ extension AnyTransition {
         )
     }
 
-    
+
     /// A flip transition that simulates a 3D flip effect from the center.
     ///
     /// - Returns: A transition that applies a rotation around the Y-axis from the center anchor.
@@ -87,6 +87,22 @@ extension AnyTransition {
     static var flipFromCenter: AnyTransition {
         .modifier(
             active: FlipModifier(angle: 180, axis: (x: 0, y: 1, z: 0), anchor: .center),
+            identity: FlipModifier(angle: 0, axis: (x: 0, y: 1, z: 0), anchor: .center)
+        )
+    }
+
+    
+    /// A flip transition that performs a full 360-degree rotation around the Y-axis.
+    ///
+    /// - Returns: A transition that applies a full spin with opacity from the center.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.flipFullRotation)
+    /// ```
+    static var flipFullRotation: AnyTransition {
+        .modifier(
+            active: FlipModifier(angle: 360, axis: (x: 0, y: 1, z: 0), anchor: .center),
             identity: FlipModifier(angle: 0, axis: (x: 0, y: 1, z: 0), anchor: .center)
         )
     }
