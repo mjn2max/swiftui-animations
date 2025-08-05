@@ -45,6 +45,22 @@ extension AnyTransition {
         )
     }
 
+
+    /// A rotation transition that rotates the view in from the center.
+    ///
+    /// - Returns: A transition applying a 180-degree rotation with fade from the center.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.rotateFromCenter)
+    /// ```
+    static var rotateFromCenter: AnyTransition {
+        .modifier(
+            active: RotateModifier(angle: 180, anchor: .center),
+            identity: RotateModifier(angle: 0, anchor: .center)
+        )
+    }
+
     
     private struct RotateModifier: ViewModifier {
         let angle: Double
