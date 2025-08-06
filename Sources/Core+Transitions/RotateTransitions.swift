@@ -11,8 +11,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 extension AnyTransition {
     /// A rotation transition that rotates the view in from the top-left corner.
     ///
