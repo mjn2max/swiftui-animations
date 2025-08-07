@@ -23,4 +23,17 @@ extension AnyTransition {
     static var scaleFromBottom: AnyTransition {
         .scale(scale: 0.8, anchor: .bottom).combined(with: .opacity)
     }
+
+
+    /// A scale transition that scales the view from the top-leading corner with opacity.
+    ///
+    /// - Returns: A transition that combines scaling from the top-leading corner with fading.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.scaleFromTopLeading)
+    /// ```
+    static var scaleFromTopLeading: AnyTransition {
+        .scale(scale: 0.8, anchor: .topLeading).combined(with: .opacity)
+    }
 }
