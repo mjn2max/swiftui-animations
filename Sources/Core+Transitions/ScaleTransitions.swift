@@ -49,4 +49,17 @@ extension AnyTransition {
     static var scaleFromTrailing: AnyTransition {
         .scale(scale: 0.8, anchor: .trailing).combined(with: .opacity)
     }
+
+    
+    /// A scale transition that scales the view from the center with opacity.
+    ///
+    /// - Returns: A transition that combines scaling from the center with fading.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.scaleFromCenter)
+    /// ```
+    static var scaleFromCenter: AnyTransition {
+        .scale(scale: 0.8, anchor: .center).combined(with: .opacity)
+    }
 }
