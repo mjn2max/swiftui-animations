@@ -43,4 +43,33 @@ extension View {
                     )
             )
     }
+
+
+    /// A more subtle glowing animation using lower opacity and a smaller radius.
+    ///
+    /// - Parameters:
+    ///   - color: The glow color.
+    ///   - radius: The blur radius for the subtle glow.
+    ///   - duration: The animation duration.
+    /// - Returns: A view with a soft glowing effect.
+    ///
+    /// # Usage
+    /// ```swift
+    /// Text("Soft Glow")
+    ///     .softGlow(color: .green, radius: 10, duration: 2.0)
+    /// ```
+    func softGlow(color: Color = .green, radius: CGFloat = 10, duration: Double = 2.0) -> some View {
+        self
+            .shadow(color: color.opacity(0.3), radius: radius)
+            .overlay(
+                self
+                    .shadow(color: color.opacity(0.3), radius: radius)
+                    .opacity(0.7)
+                    .animation(
+                        Animation.easeInOut(duration: duration)
+                            .repeatForever(autoreverses: true),
+                        value: UUID()
+                    )
+            )
+    }
 }
