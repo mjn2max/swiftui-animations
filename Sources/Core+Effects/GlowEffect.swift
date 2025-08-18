@@ -72,4 +72,35 @@ extension View {
                     )
             )
     }
+
+
+    /// A glowing border effect that pulses around a rounded rectangle shape overlaying the view.
+    /// This effect works well for rounded rectangles or container views where a rounded rectangle border is desired.
+    ///
+    /// - Parameters:
+    ///   - color: The border glow color.
+    ///   - lineWidth: The width of the glowing stroke.
+    ///   - duration: The animation duration.
+    /// - Returns: A view with an animated glowing rounded rectangle border.
+    ///
+    /// # Usage
+    /// ```swift
+    /// RoundedRectangle(cornerRadius: 12)
+    ///     .strokeBorder(Color.red, lineWidth: 2)
+    ///     .glowingBorder(color: .red, lineWidth: 3, duration: 1.5)
+    /// ```
+    func glowingBorder(color: Color = .red, lineWidth: CGFloat = 3, duration: Double = 1.5) -> some View {
+        self
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(color, lineWidth: lineWidth)
+                    .shadow(color: color.opacity(0.7), radius: lineWidth)
+                    .opacity(0.8)
+                    .animation(
+                        Animation.easeInOut(duration: duration)
+                            .repeatForever(autoreverses: true),
+                        value: UUID()
+                    )
+            )
+    }
 }
