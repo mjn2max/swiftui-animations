@@ -103,4 +103,34 @@ extension View {
                     )
             )
     }
+
+
+    /// A neon-like glow effect that simulates a bright neon light around the view.
+    ///
+    /// - Parameters:
+    ///   - color: The neon glow color.
+    ///   - radius: The maximum blur radius for the neon glow.
+    ///   - duration: The animation duration.
+    /// - Returns: A view with a vibrant neon glowing effect.
+    ///
+    /// # Usage
+    /// ```swift
+    /// Text("Neon")
+    ///     .neonGlow(color: .pink, radius: 25, duration: 1.0)
+    /// ```
+    func neonGlow(color: Color = .pink, radius: CGFloat = 25, duration: Double = 1.0) -> some View {
+        self
+            .shadow(color: color.opacity(0.8), radius: radius)
+            .overlay(
+                self
+                    .shadow(color: color.opacity(0.8), radius: radius / 2)
+                    .blur(radius: radius / 4)
+                    .opacity(0.9)
+                    .animation(
+                        Animation.easeInOut(duration: duration)
+                            .repeatForever(autoreverses: true),
+                        value: UUID()
+                    )
+            )
+    }
 }
