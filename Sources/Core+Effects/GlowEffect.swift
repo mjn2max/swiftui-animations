@@ -133,4 +133,33 @@ extension View {
                     )
             )
     }
+
+
+    /// A rainbow glowing effect that cycles through multiple colors.
+    ///
+    /// - Parameters:
+    ///   - radius: The glow radius.
+    ///   - duration: The cycle duration for the color changes.
+    /// - Returns: A view with a continuously cycling rainbow glow.
+    ///
+    /// # Usage
+    /// ```swift
+    /// Text("Rainbow Glow")
+    ///     .rainbowGlow(radius: 20, duration: 3.0)
+    /// ```
+    func rainbowGlow(radius: CGFloat = 20, duration: Double = 3.0) -> some View {
+        let colors: [Color] = [.red, .orange, .yellow, .green, .blue, .purple]
+        return self
+            .shadow(color: .red.opacity(0.6), radius: radius)
+            .overlay(
+                LinearGradient(gradient: Gradient(colors: colors), startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .mask(self)
+                    .shadow(color: .red, radius: radius)
+                    .animation(
+                        Animation.linear(duration: duration)
+                            .repeatForever(autoreverses: true),
+                        value: UUID()
+                    )
+            )
+    }
 }
