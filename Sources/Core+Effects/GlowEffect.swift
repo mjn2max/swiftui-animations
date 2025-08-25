@@ -9,8 +9,6 @@
 // CodePassion.dev
 //
 
-import Foundation
-
 import SwiftUI
 
 extension View {
