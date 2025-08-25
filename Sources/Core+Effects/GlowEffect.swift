@@ -162,4 +162,35 @@ extension View {
                     )
             )
     }
+
+
+    /// A pulsing glow that expands and contracts around the view.
+    ///
+    /// - Parameters:
+    ///   - color: The pulse glow color.
+    ///   - maxScale: The maximum scale during the pulse.
+    ///   - duration: The pulse animation duration.
+    /// - Returns: A view with a pulsating glow effect.
+    ///
+    /// # Usage
+    /// ```swift
+    /// Circle()
+    ///     .fill(Color.blue)
+    ///     .pulseGlow(color: .blue, maxScale: 1.2, duration: 1.0)
+    /// ```
+    func pulseGlow(color: Color = .blue, maxScale: CGFloat = 1.2, duration: Double = 1.0) -> some View {
+        self
+            .shadow(color: color.opacity(0.7), radius: 15)
+            .overlay(
+                self
+                    .scaleEffect(maxScale)
+                    .shadow(color: color.opacity(0.5), radius: 20)
+                    .opacity(0.7)
+                    .animation(
+                        Animation.easeInOut(duration: duration)
+                            .repeatForever(autoreverses: true),
+                        value: UUID()
+                    )
+            )
+    }
 }
