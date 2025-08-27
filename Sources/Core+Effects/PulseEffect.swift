@@ -34,4 +34,25 @@ extension View {
                 value: UUID()
             )
     }
+
+
+    /// A pulsing opacity effect that fades in and out.
+    ///
+    /// - Parameter duration: Duration of fade cycle.
+    /// - Returns: A view with a fading pulse animation.
+    ///
+    /// # Usage
+    /// ```swift
+    /// Text("Loading")
+    ///     .pulseOpacity(duration: 1.5)
+    /// ```
+    func pulseOpacity(duration: Double = 1.5) -> some View {
+        self
+            .opacity(0.5)
+            .animation(
+                Animation.easeInOut(duration: duration)
+                    .repeatForever(autoreverses: true),
+                value: UUID()
+            )
+    }
 }
