@@ -55,4 +55,35 @@ extension View {
                 value: UUID()
             )
     }
+
+
+    /// A pulsing border effect using overlay.
+    ///
+    /// - Parameters:
+    ///   - color: The color of the border pulse.
+    ///   - lineWidth: The maximum border width.
+    ///   - duration: Duration of pulse cycle.
+    /// - Returns: A view with a glowing pulsing border.
+    ///
+    /// # Usage
+    /// ```swift
+    /// RoundedRectangle(cornerRadius: 12)
+    ///     .fill(Color.clear)
+    ///     .frame(width: 120, height: 60)
+    ///     .pulseBorder(color: .blue, lineWidth: 6, duration: 1.2)
+    /// ```
+    func pulseBorder(color: Color = .blue, lineWidth: CGFloat = 6, duration: Double = 1.2) -> some View {
+        self
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(color, lineWidth: lineWidth)
+                    .scaleEffect(1.1)
+                    .opacity(0.5)
+                    .animation(
+                        Animation.easeInOut(duration: duration)
+                            .repeatForever(autoreverses: true),
+                        value: UUID()
+                    )
+            )
+    }
 }
