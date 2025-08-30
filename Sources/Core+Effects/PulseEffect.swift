@@ -86,4 +86,34 @@ extension View {
                     )
             )
     }
+
+
+    /// A ripple pulse effect that expands outward.
+    ///
+    /// - Parameters:
+    ///   - color: The ripple color.
+    ///   - maxRadius: The maximum radius of the ripple.
+    ///   - duration: Duration of ripple animation.
+    /// - Returns: A view with an expanding ripple pulse.
+    ///
+    /// # Usage
+    /// ```swift
+    /// Circle()
+    ///     .fill(Color.red)
+    ///     .ripplePulse(color: .red, maxRadius: 50, duration: 2.0)
+    /// ```
+    func ripplePulse(color: Color = .red, maxRadius: CGFloat = 50, duration: Double = 2.0) -> some View {
+        ZStack {
+            self
+            Circle()
+                .stroke(color.opacity(0.5), lineWidth: 2)
+                .scaleEffect(maxRadius / 10)
+                .opacity(0.0)
+                .animation(
+                    Animation.easeOut(duration: duration)
+                        .repeatForever(autoreverses: false),
+                    value: UUID()
+                )
+        }
+    }
 }
