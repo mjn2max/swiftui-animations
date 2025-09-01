@@ -32,3 +32,14 @@ fileprivate struct ShakeEffect: GeometryEffect {
     }
 }
 
+fileprivate struct RotateShakeEffect: GeometryEffect {
+    var animatableData: CGFloat
+    var angle: Double
+    var duration: Double
+
+    func effectValue(size: CGSize) -> ProjectionTransform {
+        let rotation = sin(animatableData * .pi * 2) * angle
+        let transform = CGAffineTransform(rotationAngle: CGFloat(rotation * .pi / 180))
+        return ProjectionTransform(transform)
+    }
+}
