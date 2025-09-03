@@ -28,6 +28,23 @@ extension View {
     func shakeHorizontal(distance: CGFloat = 10, duration: Double = 0.1, repeats: Int = 5) -> some View {
         self.modifier(ShakeEffect(animatableData: CGFloat(repeats), axis: .horizontal, distance: distance, duration: duration))
     }
+
+    /// A vertical shake effect that moves the view up and down.
+    ///
+    /// - Parameters:
+    ///   - distance: The maximum vertical offset.
+    ///   - duration: Duration of one shake cycle.
+    ///   - repeats: Number of repeats for the shake.
+    /// - Returns: A view with a vertical shake animation.
+    ///
+    /// # Usage
+    /// ```swift
+    /// Image(systemName: "arrow.down")
+    ///     .shakeVertical(distance: 8, duration: 0.12, repeats: 4)
+    /// ```
+    func shakeVertical(distance: CGFloat = 8, duration: Double = 0.12, repeats: Int = 4) -> some View {
+        self.modifier(ShakeEffect(animatableData: CGFloat(repeats), axis: .vertical, distance: distance, duration: duration))
+    }
 }
 
 
