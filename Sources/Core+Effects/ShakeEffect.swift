@@ -45,6 +45,23 @@ extension View {
     func shakeVertical(distance: CGFloat = 8, duration: Double = 0.12, repeats: Int = 4) -> some View {
         self.modifier(ShakeEffect(animatableData: CGFloat(repeats), axis: .vertical, distance: distance, duration: duration))
     }
+
+    /// A rotation shake effect that tilts the view back and forth.
+    ///
+    /// - Parameters:
+    ///   - angle: The maximum rotation angle in degrees.
+    ///   - duration: Duration of one shake cycle.
+    ///   - repeats: Number of repeats for the shake.
+    /// - Returns: A view with a rotational shake animation.
+    ///
+    /// # Usage
+    /// ```swift
+    /// Image(systemName: "exclamationmark.triangle")
+    ///     .shakeRotate(angle: 6, duration: 0.15, repeats: 3)
+    /// ```
+    func shakeRotate(angle: Double = 6, duration: Double = 0.15, repeats: Int = 3) -> some View {
+        self.modifier(RotateShakeEffect(animatableData: CGFloat(repeats), angle: angle, duration: duration))
+    }
 }
 
 
