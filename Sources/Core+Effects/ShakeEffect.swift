@@ -62,6 +62,24 @@ extension View {
     func shakeRotate(angle: Double = 6, duration: Double = 0.15, repeats: Int = 3) -> some View {
         self.modifier(RotateShakeEffect(animatableData: CGFloat(repeats), angle: angle, duration: duration))
     }
+
+
+    /// A diagonal shake effect that moves the view both horizontally and vertically.
+    ///
+    /// - Parameters:
+    ///   - distance: The maximum offset in both directions.
+    ///   - duration: Duration of one shake cycle.
+    ///   - repeats: Number of repeats for the shake.
+    /// - Returns: A view with a diagonal shake animation.
+    ///
+    /// # Usage
+    /// ```swift
+    /// Text("Diagonal Shake")
+    ///     .shakeDiagonal(distance: 12, duration: 0.1, repeats: 5)
+    /// ```
+    func shakeDiagonal(distance: CGFloat = 12, duration: Double = 0.1, repeats: Int = 5) -> some View {
+        self.modifier(DiagonalShakeEffect(animatableData: CGFloat(repeats), distance: distance, duration: duration))
+    }
 }
 
 
