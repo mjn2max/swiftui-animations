@@ -98,6 +98,24 @@ extension View {
     func shake3DX(angle: Double = 8, duration: Double = 0.15, repeats: Int = 4) -> some View {
         self.modifier(Rotate3DShakeEffect(animatableData: CGFloat(repeats), angle: angle, axis: (x: 1, y: 0, z: 0), duration: duration))
     }
+
+    
+    /// A 3D rotation shake effect that wobbles along the Y axis.
+    ///
+    /// - Parameters:
+    ///   - angle: Maximum rotation angle in degrees.
+    ///   - duration: Duration of one shake cycle.
+    ///   - repeats: Number of repeats for the shake.
+    /// - Returns: A view with a 3D wobble effect along Y axis.
+    ///
+    /// # Usage
+    /// ```swift
+    /// Text("3D Shake Y")
+    ///     .shake3DY(angle: 8, duration: 0.15, repeats: 4)
+    /// ```
+    func shake3DY(angle: Double = 8, duration: Double = 0.15, repeats: Int = 4) -> some View {
+        self.modifier(Rotate3DShakeEffect(animatableData: CGFloat(repeats), angle: angle, axis: (x: 0, y: 1, z: 0), duration: duration))
+    }
 }
 
 
