@@ -152,3 +152,14 @@ fileprivate struct RotateShakeEffect: GeometryEffect {
         return ProjectionTransform(transform)
     }
 }
+
+fileprivate struct DiagonalShakeEffect: GeometryEffect {
+    var animatableData: CGFloat
+    var distance: CGFloat
+    var duration: Double
+
+    func effectValue(size: CGSize) -> ProjectionTransform {
+        let offset = sin(animatableData * .pi * 2) * distance
+        return ProjectionTransform(CGAffineTransform(translationX: offset, y: offset))
+    }
+}
