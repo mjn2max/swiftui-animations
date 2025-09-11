@@ -163,3 +163,18 @@ fileprivate struct DiagonalShakeEffect: GeometryEffect {
         return ProjectionTransform(CGAffineTransform(translationX: offset, y: offset))
     }
 }
+
+fileprivate struct Rotate3DShakeEffect: GeometryEffect {
+    var animatableData: CGFloat
+    var angle: Double
+    var axis: (x: CGFloat, y: CGFloat, z: CGFloat)
+    var duration: Double
+
+    func effectValue(size: CGSize) -> ProjectionTransform {
+        let rotation = sin(animatableData * .pi * 2) * angle
+        var transform3D = CATransform3DIdentity
+        transform3D.m34 = -1 / 500 // perspective
+        transform3D = CATransform3DRotate(transform3D, CGFloat(rotation * .pi / 180), axis.x, axis.y, axis.z)
+        return ProjectionTransform(CATransform3DGetAffineTransform(transform3D))
+    }
+}
