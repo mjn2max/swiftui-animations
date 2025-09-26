@@ -106,6 +106,22 @@ extension AnyTransition {
             identity: FlipModifier(angle: 0, axis: (x: 0, y: 1, z: 0), anchor: .center)
         )
     }
+
+    
+    /// A flip transition that rotates diagonally from the top-leading corner.
+    ///
+    /// - Returns: A transition that flips diagonally from the top-leading edge with 3D effect.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.flipFromTopLeading)
+    /// ```
+    static var flipFromTopLeading: AnyTransition {
+        .modifier(
+            active: FlipModifier(angle: -90, axis: (x: 1, y: 1, z: 0), anchor: .topLeading),
+            identity: FlipModifier(angle: 0, axis: (x: 1, y: 1, z: 0), anchor: .topLeading)
+        )
+    }
 }
 
 private struct FlipModifier: ViewModifier {
