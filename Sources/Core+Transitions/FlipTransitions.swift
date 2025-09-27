@@ -122,6 +122,22 @@ extension AnyTransition {
             identity: FlipModifier(angle: 0, axis: (x: 1, y: 1, z: 0), anchor: .topLeading)
         )
     }
+
+    
+    /// A flip transition that rotates diagonally from the bottom-trailing corner.
+    ///
+    /// - Returns: A transition that flips diagonally from the bottom-trailing edge with 3D effect.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.flipFromBottomTrailing)
+    /// ```
+    static var flipFromBottomTrailing: AnyTransition {
+        .modifier(
+            active: FlipModifier(angle: 90, axis: (x: 1, y: 1, z: 0), anchor: .bottomTrailing),
+            identity: FlipModifier(angle: 0, axis: (x: 1, y: 1, z: 0), anchor: .bottomTrailing)
+        )
+    }
 }
 
 private struct FlipModifier: ViewModifier {
