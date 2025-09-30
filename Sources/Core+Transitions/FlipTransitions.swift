@@ -138,6 +138,22 @@ extension AnyTransition {
             identity: FlipModifier(angle: 0, axis: (x: 1, y: 1, z: 0), anchor: .bottomTrailing)
         )
     }
+
+    
+    /// A flip transition that rotates around the Z-axis (flat spin).
+    ///
+    /// - Returns: A transition with a flat 2D-style spin effect.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.flipZAxis)
+    /// ```
+    static var flipZAxis: AnyTransition {
+        .modifier(
+            active: FlipModifier(angle: 180, axis: (x: 0, y: 0, z: 1), anchor: .center),
+            identity: FlipModifier(angle: 0, axis: (x: 0, y: 0, z: 1), anchor: .center)
+        )
+    }
 }
 
 private struct FlipModifier: ViewModifier {
