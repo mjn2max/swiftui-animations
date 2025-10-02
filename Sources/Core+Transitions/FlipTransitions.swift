@@ -154,6 +154,22 @@ extension AnyTransition {
             identity: FlipModifier(angle: 0, axis: (x: 0, y: 0, z: 1), anchor: .center)
         )
     }
+
+    
+    /// A flip transition that rotates around both X and Y axes (diagonal 3D flip).
+    ///
+    /// - Returns: A transition with a complex 3D diagonal flip.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.flipDiagonal3D)
+    /// ```
+    static var flipDiagonal3D: AnyTransition {
+        .modifier(
+            active: FlipModifier(angle: 180, axis: (x: 1, y: 1, z: 0), anchor: .center),
+            identity: FlipModifier(angle: 0, axis: (x: 1, y: 1, z: 0), anchor: .center)
+        )
+    }
 }
 
 private struct FlipModifier: ViewModifier {
