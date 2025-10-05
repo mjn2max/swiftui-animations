@@ -62,4 +62,17 @@ extension AnyTransition {
     static var scaleFromCenter: AnyTransition {
         .scale(scale: 0.8, anchor: .center).combined(with: .opacity)
     }
+    
+    
+    /// A scale transition that scales the view from the bottom-leading corner with opacity.
+    ///
+    /// - Returns: A transition that combines scaling from the bottom-leading corner with fading.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.scaleFromBottomLeading)
+    /// ```
+    static var scaleFromBottomLeading: AnyTransition {
+        .scale(scale: 0.8, anchor: .bottomLeading).combined(with: .opacity)
+    }
 }
