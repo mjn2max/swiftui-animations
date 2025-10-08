@@ -88,4 +88,20 @@ extension AnyTransition {
     static var scaleFromTopTrailing: AnyTransition {
         .scale(scale: 0.8, anchor: .topTrailing).combined(with: .opacity)
     }
+
+    
+    /// A scale transition that expands the view horizontally from the center.
+    ///
+    /// - Returns: A transition that scales horizontally from the center with opacity.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.scaleHorizontal)
+    /// ```
+    static var scaleHorizontal: AnyTransition {
+        .asymmetric(
+            insertion: .modifier(active: ScaleAxisModifier(x: 0.0, y: 1.0), identity: ScaleAxisModifier(x: 1.0, y: 1.0)),
+            removal: .modifier(active: ScaleAxisModifier(x: 0.0, y: 1.0), identity: ScaleAxisModifier(x: 1.0, y: 1.0))
+        ).combined(with: .opacity)
+    }
 }
