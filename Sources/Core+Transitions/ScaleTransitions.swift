@@ -104,4 +104,20 @@ extension AnyTransition {
             removal: .modifier(active: ScaleAxisModifier(x: 0.0, y: 1.0), identity: ScaleAxisModifier(x: 1.0, y: 1.0))
         ).combined(with: .opacity)
     }
+
+    
+    /// A scale transition that expands the view vertically from the center.
+    ///
+    /// - Returns: A transition that scales vertically from the center with opacity.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.scaleVertical)
+    /// ```
+    static var scaleVertical: AnyTransition {
+        .asymmetric(
+            insertion: .modifier(active: ScaleAxisModifier(x: 1.0, y: 0.0), identity: ScaleAxisModifier(x: 1.0, y: 1.0)),
+            removal: .modifier(active: ScaleAxisModifier(x: 1.0, y: 0.0), identity: ScaleAxisModifier(x: 1.0, y: 1.0))
+        ).combined(with: .opacity)
+    }
 }
