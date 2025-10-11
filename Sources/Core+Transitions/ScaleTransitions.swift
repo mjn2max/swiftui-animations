@@ -120,4 +120,21 @@ extension AnyTransition {
             removal: .modifier(active: ScaleAxisModifier(x: 1.0, y: 0.0), identity: ScaleAxisModifier(x: 1.0, y: 1.0))
         ).combined(with: .opacity)
     }
+
+    
+    /// A pulsating scale transition that grows slightly larger before settling to normal size.
+    ///
+    /// - Returns: A transition with a soft pulse animation.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.scalePulse)
+    /// ```
+    static var scalePulse: AnyTransition {
+        .modifier(
+            active: ScaleAxisModifier(x: 1.2, y: 1.2),
+            identity: ScaleAxisModifier(x: 1.0, y: 1.0)
+        ).combined(with: .opacity)
+    }
+}
 }
