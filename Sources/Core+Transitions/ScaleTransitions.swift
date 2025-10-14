@@ -137,4 +137,12 @@ extension AnyTransition {
         ).combined(with: .opacity)
     }
 }
+
+fileprivate struct ScaleAxisModifier: ViewModifier {
+    var x: CGFloat
+    var y: CGFloat
+
+    func body(content: Content) -> some View {
+        content.scaleEffect(x: x, y: y)
+    }
 }
