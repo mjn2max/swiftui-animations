@@ -34,6 +34,22 @@ public extension View {
             // Apply the duration directly on a concrete animation.
             .animation(.easeInOut(duration: duration), value: isVisible)
     }
+
+    /// Fades the view in when it appears.
+    ///
+    /// - Parameters:
+    ///   - duration: Animation duration.
+    ///   - delay: Optional delay before starting.
+    /// - Returns: A view that animates from 0 → 1 opacity on appear.
+    ///
+    /// # Usage
+    /// ```swift
+    /// Image("Logo")
+    ///     .fadeInOnAppear(duration: 0.35, delay: 0.1)
+    /// ```
+    func fadeInOnAppear(duration: Double = 0.35, delay: Double = 0.0) -> some View {
+        modifier(FadeInOnAppearModifier(duration: duration, delay: delay))
+    }
 }
 struct SwiftUIView: View {
     var body: some View {
