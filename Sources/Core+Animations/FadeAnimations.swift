@@ -66,6 +66,23 @@ public extension View {
     func fadeOutOnDisappear(duration: Double = 0.25, delay: Double = 0.0) -> some View {
         modifier(FadeOutOnDisappearModifier(duration: duration, delay: delay))
     }
+
+    /// Creates a pulsing fade (breathing) animation that repeats forever.
+    ///
+    /// - Parameters:
+    ///   - min: Minimum opacity value during the pulse.
+    ///   - max: Maximum opacity value during the pulse.
+    ///   - duration: Duration of one pulse cycle (fade out + fade in).
+    /// - Returns: A view with a repeating fade pulse.
+    ///
+    /// # Usage
+    /// ```swift
+    /// ProgressView()
+    ///     .fadePulse(min: 0.35, max: 1.0, duration: 1.2)
+    /// ```
+    func fadePulse(min: Double = 0.35, max: Double = 1.0, duration: Double = 1.2) -> some View {
+        modifier(FadePulseModifier(min: min, max: max, duration: duration))
+    }
 }
 struct SwiftUIView: View {
     var body: some View {
