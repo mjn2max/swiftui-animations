@@ -50,6 +50,22 @@ public extension View {
     func fadeInOnAppear(duration: Double = 0.35, delay: Double = 0.0) -> some View {
         modifier(FadeInOnAppearModifier(duration: duration, delay: delay))
     }
+
+    /// Fades the view out just before it disappears.
+    ///
+    /// - Parameters:
+    ///   - duration: Animation duration.
+    ///   - delay: Optional delay before starting.
+    /// - Returns: A view that animates from 1 → 0 opacity on disappear.
+    ///
+    /// # Usage
+    /// ```swift
+    /// Text("Goodbye")
+    ///     .fadeOutOnDisappear(duration: 0.25)
+    /// ```
+    func fadeOutOnDisappear(duration: Double = 0.25, delay: Double = 0.0) -> some View {
+        modifier(FadeOutOnDisappearModifier(duration: duration, delay: delay))
+    }
 }
 struct SwiftUIView: View {
     var body: some View {
