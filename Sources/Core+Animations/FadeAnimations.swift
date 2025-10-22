@@ -83,6 +83,26 @@ public extension View {
     func fadePulse(min: Double = 0.35, max: Double = 1.0, duration: Double = 1.2) -> some View {
         modifier(FadePulseModifier(min: min, max: max, duration: duration))
     }
+
+    /// Fades the view when disabled to indicate non-interactivity.
+    ///
+    /// - Parameters:
+    ///   - isDisabled: Whether the view is disabled.
+    ///   - disabledOpacity: Opacity to apply while disabled.
+    ///   - duration: Animation duration.
+    /// - Returns: A view that animates opacity when the disabled state changes.
+    ///
+    /// # Usage
+    /// ```swift
+    /// Button("Submit") { }
+    ///     .fadeWhenDisabled(isDisabled: isLoading)
+    ///     .disabled(isLoading)
+    /// ```
+    func fadeWhenDisabled(isDisabled: Bool, disabledOpacity: Double = 0.4, duration: Double = 0.2) -> some View {
+        self
+            .opacity(isDisabled ? disabledOpacity : 1.0)
+            .animation(.easeInOut(duration: duration), value: isDisabled)
+    }
 }
 struct SwiftUIView: View {
     var body: some View {
