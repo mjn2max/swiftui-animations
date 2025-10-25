@@ -140,6 +140,36 @@ public extension View {
         .animation(.easeInOut(duration: duration), value: isShowingFirst)
     }
 }
+
+// MARK: - Transitions
+
+public extension AnyTransition {
+    /// # Usage
+    /// ```swift
+    /// .transition(.opacityFade)
+    /// ```
+    /// Convenience alias for plain opacity transition.
+    static var opacityFade: AnyTransition { .opacity }
+
+    /// A combined fade & scale transition for subtle emphasis.
+    ///
+    /// - Parameter scale: Starting scale factor for insertion/removal.
+    /// - Returns: A transition that fades and scales content.
+    ///
+    /// # Usage
+    /// ```swift
+    /// .transition(.fadeAndScale(scale: 0.96))
+    /// ```
+    static func fadeAndScale(scale: CGFloat = 0.96) -> AnyTransition {
+        .opacity.combined(with: .scale(scale: scale))
+    }
+
+    /// A directional fade that inserts from transparent and removes to transparent,
+    /// useful when switching content in place without movement.
+    static var fadeSymmetric: AnyTransition {
+        .asymmetric(insertion: .opacity, removal: .opacity)
+    }
+}
 struct SwiftUIView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
