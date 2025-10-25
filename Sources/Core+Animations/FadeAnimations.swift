@@ -103,6 +103,42 @@ public extension View {
             .opacity(isDisabled ? disabledOpacity : 1.0)
             .animation(.easeInOut(duration: duration), value: isDisabled)
     }
+
+    /// Crossfades between two views using a boolean flag.
+    ///
+    /// - Parameters:
+    ///   - isShowingFirst: If `true`, shows the `first` view; otherwise, the `second`.
+    ///   - duration: Duration of the crossfade.
+    ///   - first: The first view to display.
+    ///   - second: The second view to display.
+    /// - Returns: A container that crossfades between the two views.
+    ///
+    /// # Usage
+    /// ```swift
+    /// crossfade(isShowingFirst: showA, duration: 0.3) {
+    ///     AView()
+    /// } second: {
+    ///     BView()
+    /// }
+    /// ```
+    @ViewBuilder
+    func crossfade<First: View, Second: View>(
+        isShowingFirst: Bool,
+        duration: Double = 0.3,
+        @ViewBuilder first: () -> First,
+        @ViewBuilder second: () -> Second
+    ) -> some View {
+        ZStack {
+            if isShowingFirst {
+                first()
+                    .transition(.opacity)
+            } else {
+                second()
+                    .transition(.opacity)
+            }
+        }
+        .animation(.easeInOut(duration: duration), value: isShowingFirst)
+    }
 }
 struct SwiftUIView: View {
     var body: some View {
