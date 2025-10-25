@@ -170,6 +170,24 @@ public extension AnyTransition {
         .asymmetric(insertion: .opacity, removal: .opacity)
     }
 }
+
+// MARK: - Supporting Modifiers
+
+fileprivate struct FadeInOnAppearModifier: ViewModifier {
+    var duration: Double
+    var delay: Double
+    @State private var shown = false
+
+    func body(content: Content) -> some View {
+        content
+            .opacity(shown ? 1 : 0)
+            .onAppear {
+                withAnimation(.easeInOut(duration: duration).delay(delay)) {
+                    shown = true
+                }
+            }
+    }
+}
 struct SwiftUIView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
