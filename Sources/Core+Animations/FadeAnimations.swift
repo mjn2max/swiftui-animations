@@ -188,6 +188,22 @@ fileprivate struct FadeInOnAppearModifier: ViewModifier {
             }
     }
 }
+
+fileprivate struct FadeOutOnDisappearModifier: ViewModifier {
+    var duration: Double
+    var delay: Double
+    @State private var shown = true
+
+    func body(content: Content) -> some View {
+        content
+            .opacity(shown ? 1 : 0)
+            .onDisappear {
+                withAnimation(.easeInOut(duration: duration).delay(delay)) {
+                    shown = false
+                }
+            }
+    }
+}
 struct SwiftUIView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
