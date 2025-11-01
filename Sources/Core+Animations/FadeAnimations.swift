@@ -204,6 +204,25 @@ fileprivate struct FadeOutOnDisappearModifier: ViewModifier {
             }
     }
 }
+
+fileprivate struct FadePulseModifier: ViewModifier {
+    var min: Double
+    var max: Double
+    var duration: Double
+    @State private var current: Double = 1.0
+
+    func body(content: Content) -> some View {
+        content
+            .opacity(current)
+            .onAppear {
+                current = max
+                withAnimation(.easeInOut(duration: duration).repeatForever(autoreverses: true)) {
+                    current = min
+                }
+            }
+    }
+}
+
 struct SwiftUIView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
