@@ -65,3 +65,36 @@ private struct BounceModifier: ViewModifier {
             }
     }
 }
+
+/// A convenience modifier that triggers a bounce when the view appears.
+///
+/// Internally, this creates and updates a `trigger` value on `onAppear` to
+/// restart the underlying `BounceModifier` animation.
+///
+/// - Parameters:
+///   - peakScale: The maximum scale reached at the start of the bounce.
+///   - duration: The spring response (approximate duration) in seconds.
+///   - damping: The spring damping fraction; lower values bounce more.
+///   - blendDuration: The spring blend duration.
+private struct BounceOnAppearModifier: ViewModifier {
+    let peakScale: CGFloat
+    let duration: CGFloat
+    let damping: CGFloat
+    let blendDuration: CGFloat
+
+    @State private var trigger = UUID()
+
+    func body(content: Content) -> some View {
+        content
+            .modifier(BounceModifier(
+                trigger: $trigger,
+                peakScale: peakScale,
+                duration: duration,
+                damping: damping,
+                blendDuration: blendDuration
+            ))
+            .onAppear {
+                trigger = UUID()
+            }
+    }
+}
