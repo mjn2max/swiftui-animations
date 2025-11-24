@@ -14,6 +14,34 @@ import SwiftUI
 // MARK: - Bounce Animations
 
 public extension View {
+    /// Applies a bounce scale effect using a spring animation.
+    ///
+    /// - Parameters:
+    ///   - scale: The peak scale reached during the bounce. Defaults to `1.1`.
+    ///   - duration: The approximate duration of the bounce in seconds. Defaults to `0.45`.
+    ///   - damping: The damping fraction for the spring. Lower values bounce more. Defaults to `0.6`.
+    ///   - blendDuration: The blend duration for the spring. Defaults to `0.0`.
+    /// - Returns: A view that briefly scales up to `scale` and settles back to `1.0`.
+    ///
+    /// # Usage
+    /// ```swift
+    /// Text("Tap me")
+    ///     .bounce(scale: 1.1, duration: 0.45, damping: 0.6, blendDuration: 0)
+    /// ```
+    func bounce(
+        scale: CGFloat = 1.1,
+        duration: CGFloat = 0.45,
+        damping: CGFloat = 0.6,
+        blendDuration: CGFloat = 0
+    ) -> some View {
+        modifier(BounceModifier(
+            trigger: .constant(UUID()),
+            peakScale: scale,
+            duration: duration,
+            damping: damping,
+            blendDuration: blendDuration
+        ))
+    }
 }
 
 // MARK: - Private Modifiers
