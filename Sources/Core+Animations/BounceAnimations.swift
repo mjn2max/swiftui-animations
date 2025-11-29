@@ -42,6 +42,34 @@ public extension View {
             blendDuration: blendDuration
         ))
     }
+
+    /// Triggers a bounce when the view appears.
+    ///
+    /// - Parameters:
+    ///   - scale: The peak scale reached during the bounce. Defaults to `1.1`.
+    ///   - duration: The approximate duration of the bounce in seconds. Defaults to `0.45`.
+    ///   - damping: The damping fraction for the spring. Lower values bounce more. Defaults to `0.6`.
+    ///   - blendDuration: The blend duration for the spring. Defaults to `0.0`.
+    /// - Returns: A view that bounces on first appearance.
+    ///
+    /// # Usage
+    /// ```swift
+    /// Text("Hello")
+    ///     .bounceOnAppear(scale: 1.1, duration: 0.45, damping: 0.6, blendDuration: 0)
+    /// ```
+    func bounceOnAppear(
+        scale: CGFloat = 1.1,
+        duration: CGFloat = 0.45,
+        damping: CGFloat = 0.6,
+        blendDuration: CGFloat = 0
+    ) -> some View {
+        modifier(BounceOnAppearModifier(
+            peakScale: scale,
+            duration: duration,
+            damping: damping,
+            blendDuration: blendDuration
+        ))
+    }
 }
 
 // MARK: - Private Modifiers
