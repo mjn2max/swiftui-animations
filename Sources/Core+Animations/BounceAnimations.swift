@@ -182,3 +182,40 @@ private struct BounceOnAppearModifier: ViewModifier {
             }
     }
 }
+
+/// A convenience modifier that triggers a bounce on tap and accessibility activation.
+///
+/// This wraps `BounceModifier` and regenerates an internal `trigger` whenever
+/// the view is tapped or the default accessibility action is performed.
+///
+/// - Parameters:
+///   - peakScale: The maximum scale reached at the start of the bounce.
+///   - duration: The spring response (approximate duration) in seconds.
+///   - damping: The spring damping fraction; lower values bounce more.
+///   - blendDuration: The spring blend duration.
+private struct BounceOnTapModifier: ViewModifier {
+    let peakScale: CGFloat
+    let duration: CGFloat
+    let damping: CGFloat
+    let blendDuration: CGFloat
+
+    @State private var trigger = UUID()
+
+    func body(content: Content) -> some View {
+        content
+            .modifier(BounceModifier(
+                trigger: $trigger,
+                peakScale: peakScale,
+                duration: duration,
+                damping: damping,
+                blendDuration: blendDuration
+            ))
+            .onTapGesture {
+                trigger = UUID()
+            }
+            .accessibilityAction(.default) {
+                trigger = UUID()
+            }
+    }
+}
+
